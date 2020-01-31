@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.org.generation.example.VitrineVirtual.dao.ProdutoRepo;
+import br.org.generation.example.VitrineVirtual.dao.IProdutoRepo;
 import br.org.generation.example.VitrineVirtual.model.Produto;
 
 @Component
 public class ProdutoServiceImpl implements IProdutoService{
 	
 	@Autowired					//busca uma implementação dentro do JSON
-	private ProdutoRepo repo;
+	private IProdutoRepo repo;
 	
 	@Override 					//corresponde a um "select * from tblproduto"
 	public List<Produto> recuperarTodos(){
